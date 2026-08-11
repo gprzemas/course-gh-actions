@@ -1,0 +1,28 @@
+name: razor-build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'razor/**'
+      - '.github/workflows/razor-build.yml'
+  workflow_dispatch: # manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore dependencies
+        run: dotnet restore ./razor/Razor.sln
+      - name: Build
+        run: dotnet build ./razor/Razor.sln --configuration Release --no-restore
+      - name: Test
+        run: dotnet test ./razor/Razor.sln --no-build --verbosity normal
+
+
