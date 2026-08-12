@@ -17,7 +17,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - run: env| grep GH_TOKEN
-            - run: gh auth login --with-token <<< "${{ secrets.GH_TOKEN }}"
+            - run: gh auth login
             - run: gh auth status
             - run: gh repo list
             - run: gh repo issue list
