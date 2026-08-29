@@ -22,4 +22,5 @@ jobs:
             - run: gh repo list
             - run: gh issue list
             - run: gh workflow list
-            - run: gh api /repo/:owner/:repo/actions/workflows
+            - run: gh api /repos/gprzemas/course-gh-actions/actions/workflows
+            - run: gh api /repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/workflows
