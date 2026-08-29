@@ -8,6 +8,10 @@ on:
       - '.github/workflows/gh-cli.yml'
   workflow_dispatch: # manual trigger
 
+permissions:
+  actions: read
+  contents: read
+
 jobs:
     gh-cli-job:
         runs-on: ubuntu-latest
