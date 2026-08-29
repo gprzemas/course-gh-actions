@@ -20,6 +20,6 @@ jobs:
             - run: gh auth login
             - run: gh auth status
             - run: gh repo list
-            - run: gh repo issue list
+            - run: gh issue list
             - run: gh workflow list
             - run: gh api /repo/:owner/:repo/actions/workflows
