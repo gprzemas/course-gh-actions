@@ -1,4 +1,4 @@
-name: gh
+name: gh-cli
 
 on:
   push:
