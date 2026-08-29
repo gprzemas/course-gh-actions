@@ -9,7 +9,7 @@ on:
   workflow_dispatch: # manual trigger
 
 jobs:
-    cli:
+    gh-cli-job:
         runs-on: ubuntu-latest
         env:
             env: env-test
@@ -17,7 +17,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - run: env| grep GH_TOKEN
-            - run: gh auth login
+            # - run: gh auth login
             - run: gh auth status
             - run: gh repo list
             - run: gh issue list
